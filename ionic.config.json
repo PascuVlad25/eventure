@@ -1,0 +1,8 @@
+{
+  "name": "Eventure",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "026771c1"
+}

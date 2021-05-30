@@ -1,0 +1,24 @@
+.header-container {
+    --min-height: 80px;
+
+    ion-title {
+        align-items: flex-end;
+        padding-bottom: 10px;
+
+        .location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 4px;
+
+            .location-text {
+                padding: 0 6px;
+            }
+        }
+
+        .range {
+            font-weight: 300;
+            font-size: 14px;
+        }
+    }
+}

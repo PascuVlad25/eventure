@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>my-events</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <ion-list-header>
+    <ion-label>My events</ion-label>
+  </ion-list-header>
+
+  <div *ngFor="let event of currentUserEvents">
+      <app-event-card class="event-card" [event]="event"></app-event-card>
+  </div>
+</ion-content>

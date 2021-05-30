@@ -13,4 +13,6 @@ export class Event {
     public priceMin: number;
     public priceMax: number;
     public currency: string;
+    public latitude: number;
+    public longitude: number;
 }

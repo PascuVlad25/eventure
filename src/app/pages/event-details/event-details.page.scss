@@ -1,0 +1,45 @@
+.image-container {
+    height: 200px;
+    width: 100%;
+
+    .cover-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+
+    .title {
+        font-weight: 600;
+        font-size: 20px;
+        max-height: 30px;
+        margin-bottom: 5px;
+    }
+
+    .date, .location {
+        margin-top: 5px;
+
+        ion-icon {
+            margin-right: 10px;
+        }
+    }
+}
+
+.description-container {
+    padding: 15px 20px;
+
+    .about-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .description {
+        
+    }
+}

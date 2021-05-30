@@ -1,31 +1,17 @@
-<ion-header mode="ios">
-  <ion-toolbar class="header-container" color="primary">
-    <ion-title>
-      <div class="location">
-        <ion-icon name="location-sharp"></ion-icon>
-        <span class="location-text">Select location</span>
-        <ion-icon name="chevron-down"></ion-icon>
-      </div>
-      <div class="range">within 10km</div>
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-location-header></app-location-header>
 
 <ion-content class="discover-content" [fullscreen]="true">
-  <!-- <ion-header collapse="condense" mode="ios">
-    <ion-toolbar color="primary">
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header> -->
-  <ion-list-header>
-    <ion-label>Recommended for you</ion-label>
-  </ion-list-header>
-
-  <ion-slides class="event-slides" [options]="slideOpts">
-    <ion-slide *ngFor="let event of getRecommendedEvents()">
-        <app-event-card class="event-card" [event]="event"></app-event-card>
-    </ion-slide>
-  </ion-slides>
+  <div *ngIf="isRecommendedSectionDisplayed()">
+    <ion-list-header>
+      <ion-label>Recommended for you</ion-label>
+    </ion-list-header>
+  
+    <ion-slides class="event-slides" [options]="slideOpts">
+      <ion-slide *ngFor="let event of getRecommendedEvents()">
+          <app-event-card class="event-card" (click)="viewEventDetails(event)" [event]="event"></app-event-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
 
   <ion-list-header>
     <ion-label>Online events</ion-label>
@@ -33,8 +19,8 @@
   </ion-list-header>
 
   <ion-slides class="event-slides" [options]="slideOpts">
-    <ion-slide *ngFor="let event of getPopularEvents()">
-        <app-event-card class="event-card" [event]="event"></app-event-card>
+    <ion-slide *ngFor="let event of getOnlineEvents()">
+        <app-event-card class="event-card" (click)="viewEventDetails(event)" [event]="event"></app-event-card>
     </ion-slide>
   </ion-slides>
 
@@ -42,7 +28,7 @@
     <ion-list-header>
       <ion-label>Top Categories</ion-label>
     </ion-list-header>
-    <ion-item *ngFor="let category of categories">
+    <ion-item *ngFor="let category of categories" (click)="viewCategoryEvents(category)">
       <ion-icon [name]="category.icon + '-outline'" slot="start" [ngStyle]="{color: category.color}"></ion-icon>
       <ion-label>{{ category.name }}</ion-label>
     </ion-item>

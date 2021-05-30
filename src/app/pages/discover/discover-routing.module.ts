@@ -6,7 +6,15 @@ const routes: Routes = [
   {
     path: '',
     component: DiscoverComponent,
-  }
+  },
+  {
+    path: 'event-list',
+    loadChildren: () => import('../event-list/event-list.module').then( m => m.EventListPageModule)
+  },
+  {
+    path: 'event-details',
+    loadChildren: () => import('../event-details/event-details.module').then( m => m.EventDetailsPageModule)
+  },
 ];
 
 @NgModule({

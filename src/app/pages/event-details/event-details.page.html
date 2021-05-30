@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>event-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="image-container">
+    <img class="cover-image" [src]="getImage()" />
+  </div>
+  <div class="info-container">
+    <div class="title" ellipsis [ellipsis-content]="getName()"></div>
+    <div class="date">
+      <ion-icon name="time"></ion-icon>
+      <span>{{ getDate() }}</span>
+    </div>
+    <div class="location">
+      <ion-icon name="location"></ion-icon>
+      <span>{{ getLocation() }}</span>
+    </div>
+  </div>
+
+  <div class="description-container">
+    <div class="about-title">About Event</div>
+    <div class="description">
+      {{ getDescription() }}
+    </div>
+  </div>
+</ion-content>

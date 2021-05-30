@@ -1,0 +1,8 @@
+<app-location-header></app-location-header>
+
+<ion-content>
+  <div *ngIf="selectedEvent" class="event-map-card">
+    {{ selectedEvent.name }}
+  </div>
+  <app-google-maps></app-google-maps>
+</ion-content>
